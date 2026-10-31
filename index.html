@@ -111,9 +111,15 @@ section{margin-top:56px}
 .tier-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
 .tier-tag{font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:999px}
 .prod{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px 24px; margin-top:16px}
-.prod-top{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; margin-bottom:14px}
-.prod-top p{margin:0; color:var(--muted); max-width:62ch}
-.price{font-size:13px; text-align:right; color:var(--muted); white-space:nowrap}
+.prod-top{display:flex; justify-content:space-between; gap:16px 24px; flex-wrap:wrap; align-items:center; padding-bottom:16px; border-bottom:1px solid var(--line)}
+.prod-top > div:first-child{flex:1 1 320px; min-width:0}
+.prod-top > p{flex:1 1 320px; margin:0; color:var(--ink); max-width:none}
+.prod > .cols,.prod > .idea-grid,.prod > .table-wrap,.prod > .note,.prod > p{margin-top:16px}
+.prod > .col{margin-top:22px}
+.prod > .col + .idea-grid,.prod > .col + .cols{margin-top:0}
+.prod > .col h4{margin-bottom:10px}
+.prod-top div p{margin:0; color:var(--muted); max-width:70ch}
+.price{font-size:13px; text-align:left; color:var(--muted); white-space:nowrap; background:var(--bg); border-radius:8px; padding:10px 14px; flex:none}
 .price b{display:block; font-size:16px; color:var(--ink)}
 .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px}
 .col h4{font-size:13.5px; margin:0 0 8px; font-weight:700}
@@ -251,7 +257,7 @@ tr:last-child td{border-bottom:none}
           <div class="price">Tham chiếu<b>30–60 tr/mart</b>Bảo trì 15–20%/năm</div>
         </div>
         <div class="col"><h4>Các loại mart có thể bán</h4></div>
-        <div class="idea-grid" style="margin-bottom:18px">
+        <div class="idea-grid">
           <div class="idea" style="border-width:2px;border-color:var(--t2)"><b>1. Làm sạch, xử lý dữ liệu</b>Đầu vào cho báo cáo customized và AI Agent</div>
           <div class="idea" style="border-width:2px;border-color:var(--t2)"><b>2. Template chuẩn hóa, tự động</b>Google Sheet, form nhập liệu tự động hóa. Ví dụ: BC kho, BC nhân sự của Cộng Cà Phê; bài Cao su của Nghĩa</div>
           <div class="idea"><b>3. Hợp nhất đa nguồn</b>Gộp Base, kế toán, sàn, Excel về một nguồn số duy nhất; hợp khách nhiều phần mềm hoặc công ty mẹ – con</div>
@@ -282,18 +288,18 @@ tr:last-child td{border-bottom:none}
       <div class="subsec" id="bao-cao-mass">
         <div class="tier-head" style="margin-top:36px"><h2 style="font-size:19px">Báo cáo đánh mass</h2><span class="tier-tag">Phụ trách: Bình – build 3–5 mẫu</span></div>
         <div class="prod">
-        <div class="prod-top" style="align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)">
-          <p style="flex:1 1 320px;margin:0;color:var(--ink)">Giá thấp, triển khai nhanh, bán được cho nhiều khách cùng lúc. Báo cáo dựng sẵn cho App Base và nguồn ngoài, khách thao tác một lần là có số. Làm trên các nền tảng dựng nhanh, chi phí thấp bên dưới.</p>
-          <div class="price" style="text-align:left;background:var(--bg);border-radius:8px;padding:10px 14px">Đơn giá<b>2–10 tr/báo cáo</b>Bán đứt, trả 1 lần</div>
+        <div class="prod-top">
+          <p>Giá thấp, triển khai nhanh, bán được cho nhiều khách cùng lúc. Báo cáo dựng sẵn cho App Base và nguồn ngoài, khách thao tác một lần là có số. Làm trên các nền tảng dựng nhanh, chi phí thấp bên dưới.</p>
+          <div class="price">Đơn giá<b>2–10 tr/báo cáo</b>Bán đứt, trả 1 lần</div>
         </div>
-        <div class="col" style="margin-top:16px"><h4>Nền tảng làm nhanh</h4></div>
-        <div class="idea-grid" style="margin-bottom:18px">
+        <div class="col"><h4>Nền tảng làm nhanh</h4></div>
+        <div class="idea-grid">
           <div class="idea hl"><b>Apps Script + HTML</b>Web app chạy trên tài khoản Google, giao diện tùy biến như HTML demo, không tốn phí nền tảng. Lưu ý giới hạn quota của Apps Script</div>
           <div class="idea hl"><b>HTML tĩnh, host chung</b>Một file HTML đọc dữ liệu từ mart hoặc Google Sheet, host trên kho demo chung của team. Nhanh nhất để nhân bản cho nhiều khách</div>
           <div class="idea"><b>Looker Studio</b>Miễn phí, nối sẵn Google Sheets, BigQuery; copy template cho khách mới rất nhanh. Giao diện ít tùy biến</div>
           <div class="idea"><b>Google Sheets dashboard</b>Khách quen dùng, tự lọc và xuất được. Hợp báo cáo đơn giản như chấm công</div>
           <div class="idea"><b>Metabase</b>Mã nguồn mở, tự host, nhiều khách dùng chung một server. Cần DE vận hành server</div>
-          <div class="idea"><b>Power BI template</b>Dùng lại được báo cáo mẫu có sẵn. Chia sẻ cho khách cần license, nên kém hợp với gói bán rẻ</div>
+          <div class="idea"><b>Power BI template</b>Dùng lại được báo cáo mẫu có sẵn. Khách muốn xem báo cáo được chia sẻ phải mua thêm license Power BI, làm tăng chi phí, vì vậy không hợp với gói bán rẻ</div>
         </div>
         <div class="col"><h4>Báo cáo bán được cho mọi khách Base</h4></div>
         <div class="idea-grid">
@@ -304,13 +310,13 @@ tr:last-child td{border-bottom:none}
           <div class="idea"><b>HRM</b>Biến động nhân sự, thâm niên, cơ cấu</div>
           <div class="idea hl"><b>Báo cáo trường tùy chỉnh</b>Khách chọn trường custom trong Service, Workflow; hệ thống tự lên pivot và biểu đồ. Giá trị nhất vì mỗi khách dùng Base một kiểu</div>
         </div>
-        <div class="col" style="margin-top:18px"><h4>Nguồn ngoài Base</h4></div>
+        <div class="col"><h4>Nguồn ngoài Base</h4></div>
         <div class="cols">
           <div class="idea" style="padding:14px 16px"><b>Sàn TMĐT nhiều shop</b><span style="color:var(--muted)">Cho brand đa kênh và agency vận hành shop.</span><ul class="list" style="margin-top:8px"><li><b>Doanh thu, đơn</b> theo sàn, shop, ngày</li><li><b>Sản phẩm, tồn kho:</b> top/chậm bán, sắp hết hàng</li><li><b>Vận hành đơn:</b> hủy, hoàn, giao trễ</li><li><b>Lãi theo SKU:</b> trừ phí sàn, ship, voucher</li><li><b>Ads sàn:</b> chi phí, ROAS</li></ul></div>
           <div class="idea" style="padding:14px 16px"><b>Facebook / social</b><span style="color:var(--muted)">Khác biệt: nối với dữ liệu Base.</span><ul class="list" style="margin-top:8px"><li><b>Ads:</b> chi phí, CTR, CPC, chi phí/kết quả</li><li><b>Creative:</b> top và đang mỏi</li><li><b>Lead → đơn → doanh thu:</b> ROAS thật qua CRM Base</li><li><b>Fanpage, inbox:</b> tương tác, phản hồi</li><li><b>Đa kênh:</b> Facebook, TikTok, Google, Zalo OA</li></ul></div>
         </div>
-        <p style="font-size:13px;color:var(--muted);margin:10px 0 0">Dữ liệu lấy được phụ thuộc API và phạm vi đối tác; cần xác nhận trước khi chào khách.</p>
-        <div class="cols" style="margin-top:18px">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:0">Dữ liệu lấy được phụ thuộc API và phạm vi đối tác; cần xác nhận trước khi chào khách.</p>
+        <div class="cols">
           <div class="col"><h4>Cách bán</h4>
             <ul class="list">
               <li><b>Báo cáo bán cùng phần mềm Base:</b> Sales bán phần mềm bán kèm luôn báo cáo, có báo giá báo cáo đi kèm từng phần mềm.</li>
@@ -329,13 +335,10 @@ tr:last-child td{border-bottom:none}
         <div class="prod-top"><div><h3>AI phân tích</h3><p>Hỏi số bằng tiếng Việt, nhận báo cáo định kỳ qua tin nhắn.</p></div></div>
         <div class="cols">
           <div class="col"><h4>AI Data (anh Chính)</h4>
-            <ul class="list"><li>Sản phẩm nội bộ, kiểm soát tốt.</li><li>Cần cải tiến thêm nhiều trước khi bán rộng.</li></ul>
+            <ul class="list"><li>Sản phẩm nội bộ, kiểm soát tốt.</li><li>Cần cải tiến thêm nhiều trước khi bán rộng.</li><li>Có sẵn daily báo cáo qua tin nhắn, không bán riêng.</li></ul>
           </div>
           <div class="col"><h4>AI ngoài: Claude, ChatGPT cắm vào mart</h4>
-            <ul class="list"><li>Triển khai nhanh, rẻ.</li><li>Khách tự trả gói AI, mình bán setup kết nối và semantic layer, không gánh chi phí model.</li><li>Rủi ro cần xử lý: phân quyền theo người hỏi, dữ liệu đi ra hệ thống ngoài.</li></ul>
-          </div>
-          <div class="col"><h4>Daily báo cáo qua tin nhắn</h4>
-            <ul class="list"><li>Là tính năng mặc định của cả hai loại trên, không bán riêng.</li></ul>
+            <ul class="list"><li>Triển khai nhanh, rẻ.</li><li>Khách tự trả gói AI, mình bán setup kết nối và semantic layer, không gánh chi phí model.</li><li>Có sẵn daily báo cáo qua tin nhắn, không bán riêng.</li><li>Vấn đề: mình bán token của bên khác, không đem lại doanh thu token cho Base.</li><li>Rủi ro cần xử lý: phân quyền theo người hỏi, dữ liệu đi ra hệ thống ngoài.</li></ul>
           </div>
         </div>
       </div><div class="prod">
@@ -367,7 +370,7 @@ tr:last-child td{border-bottom:none}
             </ul>
           </div>
         </div>
-        <div class="col" style="margin-top:18px"><h4>Ngành đề xuất mở rộng</h4></div>
+        <div class="col"><h4>Ngành đề xuất mở rộng</h4></div>
         <div class="idea-grid">
           <div class="idea hl"><b>Các ngành sản xuất chịu EUDR</b>Sản xuất từ gỗ (đồ gỗ, giấy, bao bì giấy), cà phê, ca cao, sản phẩm cao su, dầu cọ, đậu nành, da. Dùng lại phần lớn gói truy xuất cao su. Cần kiểm tra lại mốc áp dụng EUDR</div>
           <div class="idea"><b>Sản xuất</b>Sản lượng, OEE, kho, chấm công theo ca</div>
@@ -387,12 +390,12 @@ tr:last-child td{border-bottom:none}
       <div class="subsec" id="tu-van">
         <div class="tier-head" style="margin-top:36px"><h2 style="font-size:19px">Tư vấn</h2><span class="tier-tag">Phụ trách: Bình – đóng góp 40–50%</span></div>
         <div class="prod">
-        <div class="prod-top" style="align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)">
-          <p style="flex:1 1 320px;margin:0;color:var(--ink)">Bán chất xám kèm demo: ngồi cùng khách khảo sát, tư vấn cách giải bài, demo và hướng dẫn khách tự làm; demo và source code tính thêm. Mẫu: case Chư Sê Kampong Thom.</p>
-          <div class="price" style="text-align:left;background:var(--bg);border-radius:8px;padding:10px 14px">Tham chiếu<b>0,6–1 tr/giờ</b>Hoặc 2–3 tr/buổi 3 giờ</div>
+        <div class="prod-top">
+          <p>Bán chất xám kèm demo: ngồi cùng khách khảo sát, tư vấn cách giải bài, demo và hướng dẫn khách tự làm; demo và source code tính thêm. Mẫu: case Chư Sê Kampong Thom.</p>
+          <div class="price">Tham chiếu<b>0,6–1 tr/giờ</b>Hoặc 2–3 tr/buổi 3 giờ</div>
         </div>
-        <div class="col" style="margin-top:16px"><h4>Hai cách bán</h4></div>
-        <div class="cols" style="margin-bottom:18px">
+        <div class="col"><h4>Hai cách bán</h4></div>
+        <div class="cols">
           <div class="idea" style="border-width:2px;border-color:var(--t1);padding:14px 16px"><b>1. Bán tư vấn riêng</b>Khách chỉ mua tư vấn, tính theo giờ hoặc buổi. Mua thêm demo và source code nếu cần, khách tự triển khai.</div>
           <div class="idea" style="border-width:2px;border-color:var(--t1);padding:14px 16px"><b>2. Bán tư vấn cùng triển khai</b>Tư vấn là bước đầu của hợp đồng triển khai (báo cáo customized, data mart, đóng gói ngành). Phí tư vấn tính trong hoặc cấn trừ vào hợp đồng triển khai.</div>
         </div>
